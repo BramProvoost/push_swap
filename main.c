@@ -6,53 +6,107 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/17 12:40:20 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/18 10:14:11 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/19 14:40:02 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-sa : swap a - swap the first 2 elements at the top of stack a. Do nothing if there
-is only one or no elements).
-
-sb : swap b - swap the first 2 elements at the top of stack b. Do nothing if there
-is only one or no elements).
-
-ss : sa and sb at the same time.
-pa : push a - take the first element at the top of b and put it at the top of a. Do
-nothing if b is empty.
-
-pb : push b - take the first element at the top of a and put it at the top of b. Do
-nothing if a is empty.
-ra : rotate a - shift up all elements of stack a by 1. The first element becomes
-the last one.
-rb : rotate b - shift up all elements of stack b by 1. The first element becomes
-the last one.
-rr : ra and rb at the same time.
-rra : reverse rotate a - shift down all elements of stack a by 1. The last element
-becomes the first one.
-rrb : reverse rotate b - shift down all elements of stack b by 1. The last element
-becomes the first one.
-rrr : rra and rrb at the same time.
-*/
-
 #include <stdio.h>
+#include "libft.h"
+#include "ft_printf.h"
 
-int	input_valedation(int argc, char **argv)
+struct	s_Node
 {
-	argc = 0;
-	argv = 0;
-	return (0);
+	int				data;
+	struct s_Node	*next;
+};
+
+void	add_node(struct s_Node **head, int value)
+{
+	struct s_Node	*link;
+
+	link = (struct s_Node *)malloc(sizeof(struct s_Node));
+	link->data = value;
+	link->next = NULL;
+	if (*head == NULL)
+	{
+		*head = link;
+		(*head)->next = *head;
+	}
+	else
+	{
+		link->next = *head;
+		*head = link;
+	}
+}
+
+void	print_stack(struct s_Node *head)
+{
+	struct s_Node	*node;
+
+	node = head;
+	while (node->next != NULL)
+	{
+		ft_printf("head->data:\t%d\n", node->data);
+		ft_printf("head->next:\t%p\n", node->next);
+		node = node->next;
+	}
+	ft_printf("head->data:\t%d\n", node->data);
+	ft_printf("head->next:\t%p\n", node->next);
 }
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int				i;
+
+	// struct s_Node	*head;
+	// struct s_Node	*second;
+	// struct s_Node	*third;
+
+	struct s_Node	*head_a;
+	struct s_Node	*head_b;
+
+	// head = (struct s_Node *)malloc(sizeof(struct s_Node));
+	// second = (struct s_Node *)malloc(sizeof(struct s_Node));
+	// third = (struct s_Node *)malloc(sizeof(struct s_Node));
+
+	// head->data = 1;
+	// head->next = second;
+
+	// second->data = 2;
+	// second->next = third;
+
+	// third->data = 3;
+	// third->next = NULL;
 
 	i = 1;
 	while (i < argc)
 	{
-		printf("%s\n", argv[i]);
+		ft_printf("%s\n", argv[i]);
 		i++;
 	}
+	// ft_printf("head->data:\t%d\n", head->data);
+	// ft_printf("head->next:\t%p\n", head->next);
+	// ft_printf("second->data:\t%d\n", second->data);
+	// ft_printf("second->next:\t%p\n", second->next);
+	// ft_printf("third->data:\t%d\n", third->data);
+	// ft_printf("third->next:\t%p\n", third->next);
+	// print_stack(head);
+
+	head_a = NULL;
+	head_b = NULL;
+
+	add_node(&head_a, 1);
+	add_node(&head_a, 2);
+	ft_printf("data: %d\n", head_a->data);
+	ft_printf("next: %p\n", head_a->next);
+	ft_printf("data: %d\n", head_a->next->data);
+	ft_printf("next: %p\n", head_a->next->next);
+	ft_printf("data: %d\n", head_a->next->next->data);
+	ft_printf("next: %p\n", head_a->next->next->next);
+	// add_node(head_a, 6);
+	// head_a->data = 4;
+	// ft_printf("head_a->data:\t%d\n", head_a->data);
+	// ft_printf("third->next:\t%p\n", head_a->next);
+	// print_stack(head_a);
 	return (0);
 }
