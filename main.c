@@ -6,107 +6,113 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/17 12:40:20 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/19 14:40:02 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/20 09:13:11 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 #include "ft_printf.h"
 
-struct	s_Node
+typedef struct	s_node
 {
-	int				data;
-	struct s_Node	*next;
-};
+	int				value;
+	struct s_node	*next;
+}					t_node;
 
-void	add_node(struct s_Node **head, int value)
+// int	readOneAtTopOfStack(t_node *head)
+// {
+// 	return (0);
+// }
+
+/*
+void addToFront(int data, List * head) {
+    List * newNode = malloc(sizeof(List));
+    newNode->data = data;
+    newNode->next = head->next;
+    head->next = newNode;
+}
+*/
+
+/* 
+    newNode->data  = num;
+    // Next pointer of new node will point to head node of linked list  
+    newNode->next = head;
+    // make new node as new head of linked list 
+    head = newNode;
+*/
+
+void	writeOneAtTopOfStack(t_node **head, int value)
 {
-	struct s_Node	*link;
+	t_node	*node;
 
-	link = (struct s_Node *)malloc(sizeof(struct s_Node));
-	link->data = value;
-	link->next = NULL;
+	node = (t_node *)malloc(sizeof(t_node));
+	if (!node)
+	{
+		ft_printf("Faild to create memory to add element at start of the linked list.\n");
+		exit(0);
+	}
+	node->value = value;
 	if (*head == NULL)
 	{
-		*head = link;
-		(*head)->next = *head;
+		*head = node;
+		(*head)->next = NULL;
 	}
 	else
 	{
-		link->next = *head;
-		*head = link;
+		node->next = *head;
+		*head = node;
 	}
 }
 
-void	print_stack(struct s_Node *head)
+void	removeOneAtTopOfStack(t_node **head)
 {
-	struct s_Node	*node;
+	t_node	*temp;
+	if (head == NULL || *head == NULL)
+	{
+		ft_printf("Trying to remove a note that not exist\n");
+		return ;
+	}
+	temp = *head;
+	*head = (*head)->next;
+	free(temp);
+}
+
+void	print_stack(t_node *head)
+{
+	t_node	*node;
 
 	node = head;
-	while (node->next != NULL)
+	while (node)
 	{
-		ft_printf("head->data:\t%d\n", node->data);
+		ft_printf("head->data:\t%d\n", node->value);
 		ft_printf("head->next:\t%p\n", node->next);
 		node = node->next;
 	}
-	ft_printf("head->data:\t%d\n", node->data);
-	ft_printf("head->next:\t%p\n", node->next);
 }
 
 int	main(int argc, char **argv)
 {
 	int				i;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
-	// struct s_Node	*head;
-	// struct s_Node	*second;
-	// struct s_Node	*third;
-
-	struct s_Node	*head_a;
-	struct s_Node	*head_b;
-
-	// head = (struct s_Node *)malloc(sizeof(struct s_Node));
-	// second = (struct s_Node *)malloc(sizeof(struct s_Node));
-	// third = (struct s_Node *)malloc(sizeof(struct s_Node));
-
-	// head->data = 1;
-	// head->next = second;
-
-	// second->data = 2;
-	// second->next = third;
-
-	// third->data = 3;
-	// third->next = NULL;
-
+	stack_a = NULL;
+	stack_b = NULL;
 	i = 1;
 	while (i < argc)
 	{
 		ft_printf("%s\n", argv[i]);
 		i++;
 	}
-	// ft_printf("head->data:\t%d\n", head->data);
-	// ft_printf("head->next:\t%p\n", head->next);
-	// ft_printf("second->data:\t%d\n", second->data);
-	// ft_printf("second->next:\t%p\n", second->next);
-	// ft_printf("third->data:\t%d\n", third->data);
-	// ft_printf("third->next:\t%p\n", third->next);
-	// print_stack(head);
 
-	head_a = NULL;
-	head_b = NULL;
+	writeOneAtTopOfStack(&stack_a, 5);
+	removeOneAtTopOfStack(&stack_a);
+	removeOneAtTopOfStack(&stack_a);
+	writeOneAtTopOfStack(&stack_a, 6);
+	writeOneAtTopOfStack(&stack_a, 7);
+	writeOneAtTopOfStack(&stack_a, 8);
+	writeOneAtTopOfStack(&stack_a, 9);
 
-	add_node(&head_a, 1);
-	add_node(&head_a, 2);
-	ft_printf("data: %d\n", head_a->data);
-	ft_printf("next: %p\n", head_a->next);
-	ft_printf("data: %d\n", head_a->next->data);
-	ft_printf("next: %p\n", head_a->next->next);
-	ft_printf("data: %d\n", head_a->next->next->data);
-	ft_printf("next: %p\n", head_a->next->next->next);
-	// add_node(head_a, 6);
-	// head_a->data = 4;
-	// ft_printf("head_a->data:\t%d\n", head_a->data);
-	// ft_printf("third->next:\t%p\n", head_a->next);
-	// print_stack(head_a);
+	print_stack(stack_a);
 	return (0);
 }
