@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.h                                             :+:    :+:            */
+/*   rotate.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/18 10:18:06 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/18 10:19:29 by bprovoos      ########   odam.nl         */
+/*   Created: 2022/01/21 08:23:13 by bprovoos      #+#    #+#                 */
+/*   Updated: 2022/01/21 09:09:40 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "rotate.h"
 
-int	input_valedation(int argc, char **argv);
+void	ra(t_node **stack_a)
+{
+	ft_printf("ra\n");
+	rotate(stack_a);
+}
 
-#endif
+void	rb(t_node **stack_b)
+{
+	ft_printf("rb\n");
+	rotate(stack_b);
+}
+
+void	rr(t_node **stack_a, t_node **stack_b)
+{
+	ft_printf("rr\n");
+	rotate(stack_a);
+	rotate(stack_b);
+}
