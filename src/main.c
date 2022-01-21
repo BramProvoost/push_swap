@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/17 12:40:20 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 09:14:48 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/21 15:44:25 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	print_stacks(t_node *stack_a, t_node *stack_b)
 	t_node	*node_a;
 	t_node	*node_b;
 
+	if (PRINT_STACK != 1)
+		return ;
 	node_a = stack_a;
 	node_b = stack_b;
 	ft_printf(BLUE"A\tB\n"GREEN);
@@ -47,22 +49,18 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	inputChecker(argc, argv);
 	while (argc > 1)
 	{
 		argc--;
 		wotos(&stack_a, atoi(argv[argc]));
 	}
 	print_stacks(stack_a, stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	print_stacks(stack_a, stack_b);
-	// rr(&stack_a, &stack_b);
+	// pb(&stack_a, &stack_b);
 	// print_stacks(stack_a, stack_b);
-	// sb(&stack_b);
-	// ra(&stack_a);
+	// sa(&stack_a);
 	// print_stacks(stack_a, stack_b);
-	rrb(&stack_b);
-	print_stacks(stack_a, stack_b);
+	// pa(&stack_a, &stack_b);
+	// print_stacks(stack_a, stack_b);
 	return (0);
 }

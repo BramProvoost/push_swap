@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/18 10:18:06 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 11:02:36 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/21 15:44:34 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ typedef struct	s_node
 	struct s_node	*next;
 }					t_node;
 
-# include "libft.h"
 # include "ft_printf.h"
+# include "libft.h"
+# include "input_check.h"
 # include "swap.h"
 # include "push.h"
 # include "rotate.h"
@@ -39,6 +40,10 @@ typedef struct	s_node
 #  define WHITE "\033[38;5;7m"
 #  define GRAY "\033[38;5;8m"
 
+# endif
+
+# ifndef PRINT_STACK
+#  define PRINT_STACK	1
 # endif
 
 void	print_stacks(t_node *stack_a, t_node *stack_b);
