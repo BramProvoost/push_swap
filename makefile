@@ -8,22 +8,32 @@ UTIL_FILES	= push.c \
 			rotate_helper.c \
 			swap.c \
 			swap_helper.c \
-			input_check.c
+			input_check.c \
+			sorting_helpers.c \
+			sort_len_2.c \
+			sort_len_3.c \
+			sort_len_5.c
 
 C_FILES		= $(addprefix src/, $(SRC_FILES)) \
-			$(addprefix utils/commands/, $(UTIL_FILES)) \
-			$(addprefix utils/, input_check/$(UTIL_FILES))
+			$(addprefix utils/, $(UTIL_FILES))
 			
 VPATH		= src: \
 			utils/commands: \
-			utils/input_check :
+			utils/input_check: \
+			utils/algorithm:
 
 LIBFT		= lib/libft
 FT_PRINTF	= lib/ft_printf
 
 OBJ			= $(addprefix obj/,$(notdir $(C_FILES:.c=.o)))
 CFLAGS		= -Wextra -Wall -Werror \
-$(addprefix -I , $(LIBFT) $(FT_PRINTF)/src src utils/commands utils/input_check)
+			$(addprefix -I , \
+			$(LIBFT) \
+			$(FT_PRINTF)/src \
+			src \
+			utils/commands \
+			utils/input_check \
+			utils/algorithm)
 
 CCRED=\033[0;31m
 CCGREEN=\033[0;32m
@@ -65,7 +75,7 @@ fclean: clean
 
 re: clean all
 
-color:
-	@echo "$(CCGREEN)make libft$(CCEND)"
+test: $(NAME)
+	@bash ./tester/tester.sh
 
 # https://nathandumont.com/blog/automatically-detect-changes-in-header-files-in-a

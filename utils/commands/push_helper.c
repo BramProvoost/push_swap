@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/21 08:41:49 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 09:02:01 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/22 14:40:14 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,5 @@ void	dotos(t_node **head)
 	*head = (*head)->next;
 	free(temp);
 }
+
+

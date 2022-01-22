@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/21 13:49:29 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 16:01:30 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/22 13:21:14 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,35 @@ int	isNumbers(int argc, char **argv)
 	return (1);
 }
 
+int	hasDuplicates(int argc, char **argv)
+{
+	int	i;
+	int	temp;
+
+	while (argc > 1)
+	{
+		argc--;
+		temp = ft_atoi(argv[argc]);
+		i = 1;
+		while (i < argc)
+		{
+			if (ft_atoi(argv[i]) == temp)
+				return (1);
+			i++;
+		}
+	}
+	return (0);
+}
+
 void	inputChecker(int argc, char **argv)
 {
-	char	*msg;
+	int	isError;
 
-	msg = "";
-	if (!isNumbers(argc, argv))
-		msg = "Error\n";
-	ft_printf("%s", msg);
-	if (!ft_strncmp(msg, "Error\n", 6))
+	isError = !isNumbers(argc, argv);
+	isError |= hasDuplicates(argc, argv);
+	if (isError)
+	{
+		ft_printf("Error\n");
 		exit(0);
+	}
 }

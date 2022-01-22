@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/18 10:18:06 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 15:44:34 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/22 14:10:37 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct	s_node
 # include "push.h"
 # include "rotate.h"
 # include "reverse_rotate.h"
+# include "sorting_helpers.h"
 
 # ifndef MY_COLORS_H
 #  define MY_COLORS_H
