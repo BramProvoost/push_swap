@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/22 13:00:39 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/22 16:48:58 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/24 13:50:18 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	pick_sorting_methode(t_node **stack_a, t_node **stack_b, int stack_len)
 		sort_len_3(stack_a);
 	else if (stack_len <= 5)
 		sort_len_5(stack_a, stack_b, stack_len);
-	stack_b = NULL;
+	else if (stack_len <= 100)
+		sort_len_100(stack_a, stack_b, stack_len);
 }
 
 int	stack_length(t_node *stack)
@@ -54,7 +55,7 @@ void	get_limits_numbers(t_node *stack, int *lowest, int *highest)
 
 void	pb_position(t_node **stack_a, t_node **stack_b, int pos)
 {
-	int		length;
+	int	length;
 
 	length = stack_length(*stack_a);
 	if (pos < (length / 2) + 1)

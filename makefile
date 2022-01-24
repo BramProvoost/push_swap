@@ -12,7 +12,8 @@ UTIL_FILES	= push.c \
 			sorting_helpers.c \
 			sort_len_2.c \
 			sort_len_3.c \
-			sort_len_5.c
+			sort_len_5.c \
+			sort_len_100.c
 
 C_FILES		= $(addprefix src/, $(SRC_FILES)) \
 			$(addprefix utils/, $(UTIL_FILES))

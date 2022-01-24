@@ -11,8 +11,9 @@ linked list double pointer
 https://raw.githubusercontent.com/izenynn/push_swap/main/diagrams/operations_diagram.png
 linked list circular
 
+maak een tester die random lijsten van een bebaalde lengte kan controleren.
+
 
 Sorteer optie 1
 Bekijk welk getal waar heen moet.
 Bereken dan de korste weg om die daar te krijgen.
-

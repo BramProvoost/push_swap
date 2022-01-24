@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/17 12:40:20 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/22 16:05:26 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/24 12:30:53 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,12 @@ int	main(int argc, char **argv)
 		wotos(&stack_a, atoi(argv[i]));
 		i--;
 	}
-	print_stacks(stack_a, stack_b);
-	// pick_sorting_methode(&stack_a, &stack_b, argc - 1);
-	pb_lowest(&stack_a, &stack_b);
-	print_stacks(stack_a, stack_b);
+	/* Check of de lijst al is gesorteerd! */
+	
+	// print_stacks(stack_a, stack_b);
+	pick_sorting_methode(&stack_a, &stack_b, argc - 1);
+
+	// print_stacks(stack_a, stack_b);
 	/* Free stacks */
 	return (0);
 }
