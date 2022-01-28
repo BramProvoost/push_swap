@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/18 10:18:06 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/22 14:10:37 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/28 13:39:10 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct	s_node
 # ifndef MY_COLORS_H
 #  define MY_COLORS_H
 
-#  define NO_COLOR "\033[0m"
+#  define NC "\033[0m"
 #  define RED "\033[38;5;1m"
 #  define GREEN "\033[38;5;2m"
 #  define YELLOW "\033[38;5;3m"
@@ -44,7 +44,7 @@ typedef struct	s_node
 # endif
 
 # ifndef PRINT_STACK
-#  define PRINT_STACK	1
+#  define PRINT_STACK	0
 # endif
 
 void	print_stacks(t_node *stack_a, t_node *stack_b);

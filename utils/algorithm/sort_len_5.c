@@ -6,14 +6,17 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/22 13:35:02 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/24 07:59:27 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/27 11:32:31 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sorting_helpers.h"
 
-void	sort_len_5(t_node **stack_a, t_node **stack_b, int stack_len)
+void	sort_len_5(t_node **stack_a, t_node **stack_b)
 {
+	int	stack_len;
+
+	stack_len = stack_length(*stack_a);
 	pb_lowest(stack_a, stack_b);
 	if (stack_len == 5)
 		pb_lowest(stack_a, stack_b);

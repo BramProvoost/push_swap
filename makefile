@@ -13,7 +13,8 @@ UTIL_FILES	= push.c \
 			sort_len_2.c \
 			sort_len_3.c \
 			sort_len_5.c \
-			sort_len_100.c
+			sort_len_100.c \
+			sort_len_500.c
 
 C_FILES		= $(addprefix src/, $(SRC_FILES)) \
 			$(addprefix utils/, $(UTIL_FILES))
@@ -27,7 +28,7 @@ LIBFT		= lib/libft
 FT_PRINTF	= lib/ft_printf
 
 OBJ			= $(addprefix obj/,$(notdir $(C_FILES:.c=.o)))
-CFLAGS		= -Wextra -Wall -Werror \
+CFLAGS		= -Wextra -Wall -Werror -g -fsanitize=address \
 			$(addprefix -I , \
 			$(LIBFT) \
 			$(FT_PRINTF)/src \
@@ -77,6 +78,6 @@ fclean: clean
 re: clean all
 
 test: $(NAME)
-	@bash ./tester/tester.sh
+	@python3 push_swap_visualizer/pyviz.py `ruby -e "puts (1..500).to_a.shuffle.join(' ')"`
 
 # https://nathandumont.com/blog/automatically-detect-changes-in-header-files-in-a
