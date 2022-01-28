@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/22 13:00:39 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/28 13:52:57 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/28 14:55:29 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,14 +223,14 @@ int	r_s_top(t_node **stack, int value)
 	return (pos1);
 }
 
-void	move_to_stack_b_in_buckets(t_node **stack_a, t_node **stack_b, int bucket_size)
+void	move_to_stack_b_in_buckets(t_node **stack_a, t_node **stack_b)
 {
 	int	lim_a;
 	int	lim_b;
 
 	while ((*stack_a)->next != NULL)
 	{
-		lim_a = get_k_smallest(*stack_a, bucket_size);
+		lim_a = get_k_smallest(*stack_a, (stack_length(*stack_a) / 6) + 1);
 		// ft_printf(BLUE"lim_a = %d\n"NC, lim_a);
 		if (*stack_b != NULL)
 		{

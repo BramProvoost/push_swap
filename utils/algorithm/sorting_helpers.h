@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/22 13:01:10 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/28 12:36:37 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/01/28 14:55:40 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		get_k_smallest(t_node *stack, int k);
 int		get_k_biggest(t_node *stack, int k);
 int		r_b_top(t_node **stack, int value);
 int		r_s_top(t_node **stack, int value);
-void	move_to_stack_b_in_buckets(t_node **stack_a, t_node **stack_b, int bucket_size);
+void	move_to_stack_b_in_buckets(t_node **stack_a, t_node **stack_b);
 void	move_in_order_to_stack_a(t_node **stack_a, t_node **stack_b);
 int		is_sorted(t_node *stack_a, t_node *stack_b);
 int		free_stacks(t_node **stack_a, t_node **stack_b);

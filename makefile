@@ -78,6 +78,12 @@ fclean: clean
 re: clean all
 
 test: $(NAME)
+	@python3 push_swap_visualizer/pyviz.py `ruby -e "puts (1..100).to_a.shuffle.join(' ')"`
+
+test_500 : $(NAME)
 	@python3 push_swap_visualizer/pyviz.py `ruby -e "puts (1..500).to_a.shuffle.join(' ')"`
+
+# 100 >700
+# 500 >1
 
 # https://nathandumont.com/blog/automatically-detect-changes-in-header-files-in-a
