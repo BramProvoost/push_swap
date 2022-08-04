@@ -104,7 +104,6 @@ void	pb_lowest(t_node **stack_a, t_node **stack_b)
 	pb_position(stack_a, stack_b, pos);
 }
 
-
 int	get_first_pos_of_value(t_node *stack, int min, int max)
 {
 	int	counter;
@@ -223,14 +222,14 @@ int	r_s_top(t_node **stack, int value)
 	return (pos1);
 }
 
-void	move_to_stack_b_in_buckets(t_node **stack_a, t_node **stack_b)
+void	move_to_stack_b_in_buckets(t_node **stack_a, t_node **stack_b, int bucket_size)
 {
 	int	lim_a;
 	int	lim_b;
 
 	while ((*stack_a)->next != NULL)
 	{
-		lim_a = get_k_smallest(*stack_a, (stack_length(*stack_a) / 6) + 1);
+		lim_a = get_k_smallest(*stack_a, (stack_length(*stack_a) / bucket_size) + 1);
 		// ft_printf(BLUE"lim_a = %d\n"NC, lim_a);
 		if (*stack_b != NULL)
 		{

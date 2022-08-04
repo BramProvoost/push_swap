@@ -18,12 +18,12 @@ void	sort_len_3(t_node **stack)
 	{
 		if ((*stack)->next->value < (*stack)->next->next->value)
 		{
-			if ((*stack)->value < (*stack)->next->next->value) // 2 1 3
+			if ((*stack)->value < (*stack)->next->next->value)
 				sa(stack);
-			else // case 3 1 2
+			else
 				ra(stack);
 		}
-		else // 3 2 1
+		else
 		{
 			sa(stack);
 			rra(stack);
@@ -31,13 +31,12 @@ void	sort_len_3(t_node **stack)
 	}
 	else if ((*stack)->next->value > (*stack)->next->next->value)
 	{
-		if ((*stack)->value < (*stack)->next->next->value) // case 1 3 2
+		if ((*stack)->value < (*stack)->next->next->value)
 		{
 			sa(stack);
 			ra(stack);
 		}
-		else // case 2 3 1
+		else
 			rra(stack);
 	}
 }
-

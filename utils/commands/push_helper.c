@@ -12,7 +12,6 @@
 
 #include "push.h"
 
-/* Write On Top Of Stack */
 void	write_on_top_of_stack(t_node **head, int value)
 {
 	t_node	*node;
@@ -36,7 +35,6 @@ void	write_on_top_of_stack(t_node **head, int value)
 	}
 }
 
-/* Delete From Top Of Stack */
 void	delete_from_top_of_stack(t_node **head)
 {
 	t_node	*temp;
