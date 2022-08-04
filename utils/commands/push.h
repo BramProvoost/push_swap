@@ -20,7 +20,7 @@ void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
 
 /* pushz_helper.c */
-void	wotos(t_node **head, int value);
-void	dotos(t_node **head);
+void	write_on_top_of_stack(t_node **head, int value);
+void	delete_from_top_of_stack(t_node **head);
 
 #endif

@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	i = argc - 1;
 	while (i)
 	{
-		wotos(&stack_a, atoi(argv[i]));
+		write_on_top_of_stack(&stack_a, atoi(argv[i]));
 		i--;
 	}
 	if (is_sorted(stack_a, stack_b))

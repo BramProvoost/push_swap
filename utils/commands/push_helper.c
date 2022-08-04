@@ -13,8 +13,7 @@
 #include "push.h"
 
 /* Write On Top Of Stack */
-
-void	wotos(t_node **head, int value)
+void	write_on_top_of_stack(t_node **head, int value)
 {
 	t_node	*node;
 
@@ -37,9 +36,8 @@ void	wotos(t_node **head, int value)
 	}
 }
 
-/* Delete On Top Of Stack */
-
-void	dotos(t_node **head)
+/* Delete From Top Of Stack */
+void	delete_from_top_of_stack(t_node **head)
 {
 	t_node	*temp;
 
