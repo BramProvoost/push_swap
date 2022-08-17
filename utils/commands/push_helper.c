@@ -6,11 +6,11 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/21 08:41:49 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/22 14:40:14 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/08/17 11:43:49 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push.h"
+#include "main.h"
 
 void	write_on_top_of_stack(t_node **head, int value)
 {
@@ -18,17 +18,14 @@ void	write_on_top_of_stack(t_node **head, int value)
 
 	node = (t_node *)malloc(sizeof(t_node));
 	if (!node)
-	{
-		ft_printf("Faild to create memory to add element at start of the linked list.\n");
 		exit(0);
-	}
 	node->value = value;
 	if (*head == NULL)
 	{
 		*head = node;
 		(*head)->next = NULL;
 	}
-	else 
+	else
 	{
 		node->next = *head;
 		*head = node;
@@ -40,13 +37,8 @@ void	delete_from_top_of_stack(t_node **head)
 	t_node	*temp;
 
 	if (head == NULL || *head == NULL)
-	{
-		ft_printf("Trying to remove a note that not exist\n");
 		return ;
-	}
 	temp = *head;
 	*head = (*head)->next;
 	free(temp);
 }
-
-

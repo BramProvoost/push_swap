@@ -6,11 +6,11 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/21 08:23:13 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 09:09:40 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/08/17 11:48:45 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rotate.h"
+#include "main.h"
 
 void	ra(t_node **stack_a)
 {

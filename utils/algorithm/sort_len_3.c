@@ -6,11 +6,11 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/22 13:06:31 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/22 13:06:58 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/08/17 11:37:20 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sorting_helpers.h"
+#include "main.h"
 
 void	sort_len_3(t_node **stack)
 {

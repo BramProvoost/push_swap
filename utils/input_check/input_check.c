@@ -6,14 +6,13 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/21 13:49:29 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/22 13:21:14 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/08/17 11:36:18 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "input_check.h"
-#include <limits.h>
+#include "main.h"
 
-int	isNumbers(int argc, char **argv)
+int	is_numbers(int argc, char **argv)
 {
 	int	i;
 
@@ -33,7 +32,7 @@ int	isNumbers(int argc, char **argv)
 	return (1);
 }
 
-int	hasDuplicates(int argc, char **argv)
+int	has_duplicates(int argc, char **argv)
 {
 	int	i;
 	int	temp;
@@ -53,13 +52,13 @@ int	hasDuplicates(int argc, char **argv)
 	return (0);
 }
 
-void	inputChecker(int argc, char **argv)
+void	input_checker(int argc, char **argv)
 {
-	int	isError;
+	int	is_error;
 
-	isError = !isNumbers(argc, argv);
-	isError |= hasDuplicates(argc, argv);
-	if (isError)
+	is_error = !is_numbers(argc, argv);
+	is_error |= has_duplicates(argc, argv);
+	if (is_error)
 	{
 		ft_printf("Error\n");
 		exit(0);

@@ -1,20 +1,25 @@
 NAME		= push_swap
 SRC_FILES	= main.c
 UTIL_FILES	= push.c \
-			push_helper.c \
-			reverse_rotate.c \
-			reverse_rotate_helper.c \
-			rotate.c \
-			rotate_helper.c \
-			swap.c \
-			swap_helper.c \
-			input_check.c \
-			sorting_helpers.c \
+			k_limit.c \
+			move_in_order.c \
+			pb_low.c \
 			sort_len_2.c \
 			sort_len_3.c \
 			sort_len_5.c \
 			sort_len_100.c \
-			sort_len_500.c
+			sort_len_500.c \
+			sorting_helpers.c \
+			stack_helpers.c \
+			push_helper.c \
+			push.c \
+			reverse_rotate_helper.c \
+			reverse_rotate.c \
+			rotate_helper.c \
+			rotate.c \
+			swap_helper.c \
+			swap.c \
+			input_check.c
 
 C_FILES		= $(addprefix src/, $(SRC_FILES)) \
 			$(addprefix utils/, $(UTIL_FILES))
@@ -77,13 +82,8 @@ fclean: clean
 
 re: clean all
 
-test: $(NAME)
-	@python3 push_swap_visualizer/pyviz.py `ruby -e "puts (1..100).to_a.shuffle.join(' ')"`
+test_100: $(NAME)
+	@python3 push_swap_visualizer/pyviz.py `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`
 
 test_500 : $(NAME)
-	@python3 push_swap_visualizer/pyviz.py `ruby -e "puts (1..500).to_a.shuffle.join(' ')"`
-
-# 100 >700
-# 500 >1
-
-# https://nathandumont.com/blog/automatically-detect-changes-in-header-files-in-a
+	@python3 push_swap_visualizer/pyviz.py `ruby -e "puts (0..500).to_a.shuffle.join(' ')"`

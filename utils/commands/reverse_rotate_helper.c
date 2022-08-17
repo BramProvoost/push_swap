@@ -6,13 +6,13 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/21 08:42:28 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 09:06:33 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/08/17 11:45:17 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "reverse_rotate.h"
+#include "main.h"
 
-void	rotateReverse(t_node **head)
+void	rotate_reverse(t_node **head)
 {
 	t_node	*temp1;
 	t_node	*temp2;

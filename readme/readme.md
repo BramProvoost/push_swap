@@ -17,3 +17,7 @@ maak een tester die random lijsten van een bebaalde lengte kan controleren.
 Sorteer optie 1
 Bekijk welk getal waar heen moet.
 Bereken dan de korste weg om die daar te krijgen.
+
+andere optie:
+geef elk getal een positie nummer
+gebruik binary sort op de positie nummer om te sorteren

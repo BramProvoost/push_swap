@@ -6,11 +6,11 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/21 08:22:52 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 08:54:15 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/08/17 11:44:54 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push.h"
+#include "main.h"
 
 void	pa(t_node **stack_a, t_node **stack_b)
 {

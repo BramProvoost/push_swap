@@ -6,11 +6,11 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/20 10:01:08 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/01/21 09:13:29 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/08/17 11:54:35 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "swap.h"
+#include "main.h"
 
 void	sa(t_node **stack_a)
 {
